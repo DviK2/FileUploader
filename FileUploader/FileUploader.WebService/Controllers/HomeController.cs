@@ -1,6 +1,8 @@
 ﻿using FileUploader.WebService.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Text;
 
 namespace FileUploader.WebService.Controllers
 {
@@ -27,6 +29,30 @@ namespace FileUploader.WebService.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public IActionResult UploadFile(IFormFile? uploadedFile)
+        {
+            if (uploadedFile == null) 
+                return View("Index");
+
+            var strings = ReadAsList(uploadedFile);
+
+            ViewBag.Strings = strings;
+
+            return View("Index");
+        }
+
+        public List<string> ReadAsList(IFormFile file)
+        {
+            var result = new List<string>();
+            using var reader = new StreamReader(file.OpenReadStream());
+
+            while (reader.Peek() >= 0)
+                result.Add(reader.ReadLine());
+
+            return result;
         }
     }
 }

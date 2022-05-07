@@ -1,8 +1,48 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="card">
+    <div class="card-body">
+        <div class="text-center">
+            <h3 class="card-title">Select file to upload</h3>
+        </div>
+        <p class="card-text">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            <form asp-action="UploadFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input  class="form-control" name="uploadedFile" type="file">
+                    <button class="btn btn-secondary" type="submit">Upload</button>
+                </div>
+            </form>
+        </p>
+    </div>
 </div>
+
+@if (ViewBag.Strings != null)
+{
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center">
+                <h3 class="card-title">Uploaded file lines</h3>
+            </div>
+            <p class="card-text">
+                <ul class="list-group list-group-flush">
+                    @foreach (var s in ViewBag.Strings)
+                    {
+                        <li class="list-group-item">@s</li>
+                    }
+                </ul>
+            </p>
+        </div>
+    </div>
+}
+
+@{
+    if (ViewBag.Strings != null)
+    {
+        foreach (var s in ViewBag.Strings)
+        {
+            <h5>@s</h5>
+        }
+    }
+}
