@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploader.WebService", "FileUploader.WebService\FileUploader.WebService.csproj", "{8BD92B69-F85F-4903-95D9-2BC1B7C4E7BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploader.WebService", "FileUploader.WebService\FileUploader.WebService.csproj", "{8BD92B69-F85F-4903-95D9-2BC1B7C4E7BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploader.Services", "FileUploader.Services\FileUploader.Services.csproj", "{43DBF65F-EF28-466F-90D0-8C2F8FA7F94A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3C7254FC-743C-45CB-A55F-BC487B0356E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploader.Services.Tests", "tests\FileUploader.Services.Tests\FileUploader.Services.Tests.csproj", "{3AE28960-0084-449D-9929-3E6BB7726DAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,20 @@ Global
 		{8BD92B69-F85F-4903-95D9-2BC1B7C4E7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BD92B69-F85F-4903-95D9-2BC1B7C4E7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BD92B69-F85F-4903-95D9-2BC1B7C4E7BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43DBF65F-EF28-466F-90D0-8C2F8FA7F94A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43DBF65F-EF28-466F-90D0-8C2F8FA7F94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43DBF65F-EF28-466F-90D0-8C2F8FA7F94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43DBF65F-EF28-466F-90D0-8C2F8FA7F94A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE28960-0084-449D-9929-3E6BB7726DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE28960-0084-449D-9929-3E6BB7726DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE28960-0084-449D-9929-3E6BB7726DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE28960-0084-449D-9929-3E6BB7726DAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3AE28960-0084-449D-9929-3E6BB7726DAC} = {3C7254FC-743C-45CB-A55F-BC487B0356E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {50582BC2-0534-458A-844F-27A334142527}
