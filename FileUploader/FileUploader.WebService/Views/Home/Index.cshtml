@@ -1,4 +1,5 @@
-﻿@{
+﻿@using FileUploader.Services.Models
+@{
     ViewData["Title"] = "Home Page";
 }
 <div class="card">
@@ -10,7 +11,7 @@
 
             <form asp-action="UploadFile" asp-controller="Home" method="post" enctype="multipart/form-data">
                 <div class="input-group">
-                    <input  class="form-control" name="uploadedFile" type="file">
+                    <input class="form-control" name="uploadedFile" type="file">
                     <button class="btn btn-secondary" type="submit">Upload</button>
                 </div>
             </form>
@@ -37,12 +38,28 @@
     </div>
 }
 
-@{
-    if (ViewBag.Strings != null)
-    {
-        foreach (var s in ViewBag.Strings)
+@if (ViewBag.Structures != null)
+{
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (FileStructure s in ViewBag.Structures)
         {
-            <h5>@s</h5>
+            <tr>
+                <th scope="row">@s.Id</th>
+                <td>@s.Name</td>
+            </tr>
         }
+        </tbody>
+    </table>
+
+    foreach (FileStructure s in ViewBag.Structures)
+    {
+        <h5>Id: @s.Id &nbsp &nbsp Name: @s.Name</h5>
     }
 }
